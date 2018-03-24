@@ -12,9 +12,11 @@ areaUl.addEventListener("click",function(ev){
   a = mo.bind(e.target);
 if(e.target.nodeName.toLowerCase() === "span"){
   if(e.target.dataset.monIng=="true"){
-  popup.childNodes[1].childNodes[3].innerHTML = "您好，您是否确认领取";//注意：这里执行一次页面内容就存在，所以再true不true的就无所谓了
+  popup.childNodes[1].childNodes[1].innerHTML = "确认提示";
+  popup.childNodes[1].childNodes[3].innerHTML = "您好，您是否确认领取";//注意：这里执行一次页面内容就存在
   popup.childNodes[1].childNodes[5].innerHTML = "体验码只能领取一次";
- }else if(e.target.dataset.monIng=="false"){
+ }else if(flag&&e.target.dataset.monIng=="false"){
+ popup.childNodes[1].childNodes[1].innerHTML = "温馨提示";
   popup.childNodes[1].childNodes[3].innerHTML = "你好，你已成功领取过";
   popup.childNodes[1].childNodes[5].innerHTML = "请选择其他区域，或付费购买";
  }
